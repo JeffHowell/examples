@@ -1,4 +1,4 @@
-Purpose:
+## Purpose
 This code sample is intended to help consultants learning Java by providing a relatively small, 
 contained example that demonstrates basic concepts.
 
@@ -9,9 +9,5 @@ normal regarding code style.
 All should feel free to change this code so long as all unit tests pass.  If you want to discuss,
 please use the Collaborate page for this project.
 
-More Information:
-Search in Collaborate for Code Craftsmanship. 
-
-
-
-
+## More Information
+Search in [Collaborate](https://sites.google.com/a/summa-tech.com/collaborate/) for [Code Craftsmanship](https://sites.google.com/a/summa-tech.com/collaborate/system/app/pages/search?scope=search-site&q=Code+Craftsmanship).
