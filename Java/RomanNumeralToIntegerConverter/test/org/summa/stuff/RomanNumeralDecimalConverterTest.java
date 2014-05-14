@@ -14,7 +14,7 @@ public class RomanNumeralDecimalConverterTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void test_null() {
-	Assert.assertEquals(0, uut.convertRomanNumeralToInt(null));
+	uut.convertRomanNumeralToInt(null);
     }
 
     @Test

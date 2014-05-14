@@ -126,7 +126,6 @@ public class RomanNumeralDecimalConverter {
     private void checkSubtractiveLengths() {
 	ListIterator<RomanNumerals> iter = numeralsList.listIterator();
 	RomanNumerals numeral = iter.next();
-
 	checkSubtractiveLength(iter, numeral, 1);
     }
 
@@ -137,8 +136,6 @@ public class RomanNumeralDecimalConverter {
 	    RomanNumerals nextNumeral = iter.next();
 	    if (numeral == nextNumeral) {
 		checkSubtractiveLength(iter, nextNumeral, ++length);
-		// } else if (isNumeralLessThanNumeral(numeral, nextNumeral)
-		// && !numeral.isLegalMinuend(nextNumeral)) {
 	    } else if (isNumeralLessThanNumeral(numeral, nextNumeral)
 		    && length > 1) {
 		subtractiveLengthError(numeral, nextNumeral);
