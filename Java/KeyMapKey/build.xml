@@ -8,6 +8,7 @@
 
 	<property environment="env" />
 	<property name="junit.output.dir" value="junit" />
+	<property name="junit.report.dir" value="junitReport" />
 	<property name="coverage.output.dir" value="coverage" />
 	<property name="coverage.report.dir" value="coverageReport" />
 	<property name="result.exec.file" value="jacoco.exec" />
@@ -59,6 +60,7 @@
 		<delete dir="${coverage.output.dir}" />
 		<delete dir="${coverage.report.dir}" />
 		<delete dir="${junit.output.dir}" />
+		<delete dir="${junit.report.dir}" />
 	</target>
 	<target depends="init" name="build">
 		<echo message="${ant.project.name}: ${ant.file}" />
@@ -68,7 +70,7 @@
 			<classpath refid="KeyMapKey.classpath" />
 		</javac>
 	</target>
-	<target name="test" depends="build">
+	<target name="test" depends="build" description="Use this for Jenkins">
 		<mkdir dir="${junit.output.dir}" />
 		<mkdir dir="${coverage.output.dir}" />
 		<jacoco:coverage destfile="${coverage.output.dir}/${result.exec.file}">
@@ -79,15 +81,16 @@
 			</junit>
 		</jacoco:coverage>
 	</target>
-	<target name="junitreport" depends="test">
+	<target name="junitreport" depends="test" description="Builds HTML site for JUnit test results">
+		<mkdir dir="${junit.output.dir}" />
 		<junitreport todir="${junit.output.dir}">
 			<fileset dir="${junit.output.dir}">
 				<include name="TEST-*.xml" />
 			</fileset>
-			<report format="frames" todir="${junit.output.dir}" />
+			<report format="frames" todir="${junit.report.dir}" />
 		</junitreport>
 	</target>
-	<target name="coveragereport" depends="junitreport,test">
+	<target name="coveragereport" depends="junitreport, test" description="Builds HTML site for test coverage">
 		<mkdir dir="${coverage.report.dir}" />
 		<jacoco:report>
 			<!-- This task needs the collected execution data and ... -->
