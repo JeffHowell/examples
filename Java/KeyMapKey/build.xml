@@ -28,7 +28,7 @@
 		<pathelement location="${lib.dir}/hamcrest-core-1.3.jar" />
 		<pathelement location="${lib.dir}/junit-4.11.jar" />
 	</path>
-	
+
 	<path id="libs.classpath">
 		<path refid="jacoco.lib" />
 		<path refid="junit.libs" />
@@ -87,7 +87,7 @@
 			<report format="frames" todir="${junit.output.dir}" />
 		</junitreport>
 	</target>
-	<target name="coveragereport" depends="test">
+	<target name="coveragereport" depends="junitreport,test">
 		<mkdir dir="${coverage.report.dir}" />
 		<jacoco:report>
 			<!-- This task needs the collected execution data and ... -->
