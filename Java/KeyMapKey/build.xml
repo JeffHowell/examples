@@ -30,7 +30,7 @@
 		<path refid="junit.libs" />
 	</path>
 
-	<path id="KeyMapKey.classpath">
+	<path id="project.classpath">
 		<pathelement location="bin" />
 		<path refid="libs.classpath" />
 	</path>
@@ -50,6 +50,7 @@
 			</fileset>
 		</copy>
 	</target>
+
 	<target name="clean">
 		<delete dir="bin" />
 		<delete dir="${coverage.output.dir}" />
@@ -57,26 +58,28 @@
 		<delete dir="${junit.output.dir}" />
 		<delete dir="${junit.report.dir}" />
 	</target>
-	<target depends="init" name="build">
+	<target name="build" depends="init">
 		<echo message="${ant.project.name}: ${ant.file}" />
 		<javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
 			<src path="src" />
 			<src path="test" />
-			<classpath refid="KeyMapKey.classpath" />
+			<classpath refid="project.classpath" />
 		</javac>
 	</target>
-	<target name="test" depends="build" description="Use this for Jenkins">
+
+	<target name="test" description="Use this for Jenkins" depends="build">
 		<mkdir dir="${junit.output.dir}" />
 		<mkdir dir="${coverage.output.dir}" />
 		<jacoco:coverage destfile="${coverage.output.dir}/${result.exec.file}">
 			<junit fork="yes" printsummary="withOutAndErr">
 				<formatter type="xml" />
 				<test name="org.summa.experiments.KeyMapKeyTest" todir="${junit.output.dir}" />
-				<classpath refid="KeyMapKey.classpath" />
+				<classpath refid="project.classpath" />
 			</junit>
 		</jacoco:coverage>
 	</target>
-	<target name="junitreport" depends="test" description="Builds HTML site for JUnit test results">
+
+	<target name="junitreport" description="Builds HTML site for JUnit test results" depends="test">
 		<mkdir dir="${junit.output.dir}" />
 		<junitreport todir="${junit.output.dir}">
 			<fileset dir="${junit.output.dir}">
@@ -85,7 +88,8 @@
 			<report format="frames" todir="${junit.report.dir}" />
 		</junitreport>
 	</target>
-	<target name="coveragereport" depends="junitreport, test" description="Builds HTML site for test coverage">
+
+	<target name="coveragereport" description="Builds HTML site for test coverage" depends="junitreport, test">
 		<mkdir dir="${coverage.report.dir}" />
 		<jacoco:report>
 			<!-- This task needs the collected execution data and ... -->
