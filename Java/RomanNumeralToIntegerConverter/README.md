@@ -9,7 +9,7 @@ normal regarding code style.
 All should feel free to change this code so long as all unit tests pass.  If you want to discuss,
 please use the Collaborate page for this project.
 
-This is a small change.
+This is a small change. and another.
 
 ## More Information
 Search in [Collaborate](https://sites.google.com/a/summa-tech.com/collaborate/) for [Code Craftsmanship](https://sites.google.com/a/summa-tech.com/collaborate/system/app/pages/search?scope=search-site&q=Code+Craftsmanship).
