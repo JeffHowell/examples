@@ -10,7 +10,7 @@ All should feel free to change this code so long as all unit tests pass.  If you
 please use the Collaborate page for this project.
 
 If you use a local Jenkins, running against your local git repo, you can set up triggered builds.  
-See [Collaborate](https://sites.google.com)
+See [Collaborate](https://sites.google.com/a/)
 
 ## More Information
 Search in [Collaborate](https://sites.google.com/a/summa-tech.com/collaborate/) 
