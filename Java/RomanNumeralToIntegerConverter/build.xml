@@ -51,7 +51,7 @@
 		</copy>
 	</target>
 
-	<target name="clean">
+	<target name="clean" description="Use this for Jenkins">
 		<delete dir="bin" />
 		<delete dir="${coverage.output.dir}" />
 		<delete dir="${coverage.report.dir}" />
