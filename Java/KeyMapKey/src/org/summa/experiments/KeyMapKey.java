@@ -17,7 +17,7 @@ import java.util.Set;
  * side.
  * </p>
  * <p>
- * For usage, see {@link org.summa.experiments.KeyMapKeyTest}
+ * For usage, see code in {@link org.summa.experiments.KeyMapKeyTest}
  * </p>
  * 
  * @param <L>
