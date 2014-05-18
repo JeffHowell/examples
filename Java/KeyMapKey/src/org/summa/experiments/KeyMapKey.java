@@ -16,6 +16,9 @@ import java.util.Set;
  * The KeyMapKey can be populated from either side and accessed from either
  * side.
  * </p>
+ * <p>
+ * For usage, see {@link org.summa.experiments.KeyMapKeyTest}
+ * </p>
  * 
  * @param <L>
  *            key type of the Left Map
