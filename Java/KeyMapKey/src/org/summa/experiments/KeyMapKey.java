@@ -17,6 +17,9 @@ import java.util.Set;
  * side.
  * </p>
  * <p>
+ * All methods of the {@link Map} interface are implemented.
+ * </p>
+ * <p>
  * For usage, see code in {@link org.summa.experiments.KeyMapKeyTest}
  * </p>
  * 
