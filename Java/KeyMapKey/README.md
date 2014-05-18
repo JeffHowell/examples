@@ -13,5 +13,5 @@ If you use a local Jenkins, running against your local git repo, you can set up 
 See [Collaborate](https://sites.google.com/a/summa-tech)
 
 ## More Information
-Search in [Collaborate](https://sites.google.com/a/summa-tech.com/collaborate/) 
+Search in [Collaborate](https://sites.google.com/a/summa-tech.com/collaborate/system) 
 for [Code Craftsmanship](https://sites.google.com/a/summa-tech.com/collaborate/system/app/pages/search?scope=search-site&q=Code+Craftsmanship).
