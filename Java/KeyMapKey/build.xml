@@ -58,6 +58,7 @@
 		<delete dir="${junit.output.dir}" />
 		<delete dir="${junit.report.dir}" />
 	</target>
+	
 	<target name="build" depends="init">
 		<echo message="${ant.project.name}: ${ant.file}" />
 		<javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
