@@ -26,6 +26,7 @@ public final class KeyMapKey<L, R> {
     private final Map<L, R> lMap = new HashMap<L, R>();
     private final Map<R, L> rMap = new HashMap<R, L>();
 
+    // added references to other map that it's paired to
     public final Map<L, R> left = new MapMap<L, R>(lMap, rMap);
     public final Map<R, L> right = new MapMap<R, L>(rMap, lMap);
 
