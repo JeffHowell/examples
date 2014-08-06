@@ -9,7 +9,8 @@ normal regarding code style.
 All should feel free to change this code so long as all unit tests pass.  If you want to discuss,
 please use the Collaborate page for this project.
 
-This is a small change. and another. One more. Yet another.
+## Note about Jenkin-Git-Eclipse usage
+
 
 ## More Information
 Search in [Collaborate](https://sites.google.com/a/summa-tech.com/collaborate/) for [Code Craftsmanship](https://sites.google.com/a/summa-tech.com/collaborate/system/app/pages/search?scope=search-site&q=Code+Craftsmanship).
