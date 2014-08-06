@@ -11,9 +11,9 @@ This README would normally document whatever steps are necessary to get your app
 * Clone this project to a local git repository
 * Import into Eclipse (.project and .classpath files included)
 * Three Eclipse projects here:
-** Libs - JUnit libraries to support command line / Jenkins build
-** KeyMapKey - depands on Libs, a bi-directional Map for system to system ID mapping
-** RomanNumeralToIntegerConverter - converts a string to an int
+- * Libs - JUnit libraries to support command line / Jenkins build
+- * KeyMapKey - depends on Libs, a bi-directional Map for system to system ID mapping
+- * RomanNumeralToIntegerConverter - depends on Libs, converts a string to an int
 * see the README on each project
 ### Contribution guidelines ###
 
