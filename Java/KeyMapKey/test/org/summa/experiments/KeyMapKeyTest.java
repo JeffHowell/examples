@@ -194,4 +194,9 @@ public class KeyMapKeyTest {
 		"multiple put of same key should only have 1 entry in map", 1,
 		uut.left.size());
     }
+
+    @Test()
+    public void testShowWhatAFailLooksLike() {
+	Assert.fail();
+    }
 }
