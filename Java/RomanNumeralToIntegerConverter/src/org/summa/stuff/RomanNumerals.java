@@ -10,11 +10,11 @@ import java.util.Arrays;
  */
 enum RomanNumerals {
     I(1, true, "VX"), V(5, false, ""), X(10, true, "LC"), L(50, false, ""), C(
-	    100, true, "DM"), D(500, false, ""), M(1000, true, "");
-
+            100, true, "DM"), D(500, false, ""), M(1000, true, "");
     private int val;
     private boolean additive;
     private String legalMinuends;
+    private String names = null;
 
     /**
      * @param value
@@ -23,38 +23,36 @@ enum RomanNumerals {
      *            can this Roman numeral be repeated, a la XX
      */
     RomanNumerals(int value, boolean additive, String legalMinuends) {
-	val = value;
-	this.additive = additive;
-	this.legalMinuends = legalMinuends;
+        val = value;
+        this.additive = additive;
+        this.legalMinuends = legalMinuends;
     }
 
     public int getIntValue() {
-	return val;
+        return val;
     }
 
     public boolean isAdditive() {
-	return additive;
+        return additive;
     }
 
     public boolean isLegalMinuend(RomanNumerals otherNumeral) {
-	return legalMinuends.contains(otherNumeral.name());
+        return legalMinuends.contains(otherNumeral.name());
     }
 
-    static public String names = null;
-
-    static public boolean containsName(String name) {
-	if (names == null) {
-	    getNumeralCharactersAsString();
-	}
-	return names.contains(name);
+    public boolean containsName(String name) {
+        if (names == null) {
+            getNumeralCharactersAsString();
+        }
+        return names.contains(name);
     }
 
-    private static void getNumeralCharactersAsString() {
-	names = Arrays.toString(values());
-	names = names.replaceAll("\\W", "");
+    private void getNumeralCharactersAsString() {
+        names = Arrays.toString(values());
+        names = names.replaceAll("\\W", "");
     }
 
     public String getMinuends() {
-	return legalMinuends;
+        return legalMinuends;
     }
 }
