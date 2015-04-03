@@ -71,7 +71,7 @@ public final class KeyMapKey<L, R> {
 	}
 
 	@Override
-	synchronized public OT put(MY key, OT value) {
+	public synchronized OT put(MY key, OT value) {
 	    otherMap.put(value, key);
 	    return myMap.put(key, value);
 	}
