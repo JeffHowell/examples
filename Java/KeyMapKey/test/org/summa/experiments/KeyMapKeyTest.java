@@ -22,7 +22,7 @@ public class KeyMapKeyTest {
 
     @Test()
     public void testIsEmpty() {
-        Assert.assertTrue("expected empty", (uut.left.isEmpty()));
+        Assert.assertTrue("expected empty", uut.left.isEmpty());
         Assert.assertFalse("left.isEmpty and right.isEmpty should be the same",
                 uut.right.isEmpty() ^ uut.left.isEmpty());
         Assert.assertEquals("size should be zero", 0, uut.left.size());
@@ -47,7 +47,7 @@ public class KeyMapKeyTest {
         uut.left.put("aKey", "aValue");
         uut.left.clear();
 
-        Assert.assertTrue("expected empty", (uut.left.isEmpty()));
+        Assert.assertTrue("expected empty", uut.left.isEmpty());
         Assert.assertFalse("left.isEmpty and right.isEmpty should be the same",
                 uut.right.isEmpty() ^ uut.left.isEmpty());
         Assert.assertEquals("size should be zero", 0, uut.left.size());
@@ -199,14 +199,14 @@ public class KeyMapKeyTest {
     public void usage() throws Exception {
         // create the mapper that will relate a primary key from System A to the
         // corresponding primary key in System B.
-        KeyMapKey<String, String> mapSystemAAndSystemB = new KeyMapKey<String, String>();
+        KeyMapKey<String, Long> mapSystemAAndSystemB = new KeyMapKey<String, Long>();
 
         // systemBKeyForSystemAKey is a map keyed on primary keys from system A.
         // If we invoke
         // systemBKeyForSystemAKey.get(<some-primary-key-from-system-a>), the
         // returned value is
         // the related primary key from System B
-        Map<String, String> systemBKeyForSystemAKey = mapSystemAAndSystemB.left;
+        Map<String, Long> systemBKeyForSystemAKey = mapSystemAAndSystemB.left;
 
         // And, the converse point of view...
         // systemAKeyForSystemBKey is a map keyed on primary keys from system B.
@@ -214,11 +214,12 @@ public class KeyMapKeyTest {
         // systemAKeyForSystemBKey.get(<some-primary-key-from-system-b>), the
         // returned value is
         // the related primary key from System A
-        Map<String, String> systemAKeyForSystemBKey = mapSystemAAndSystemB.right;
+        Map<Long, String> systemAKeyForSystemBKey = mapSystemAAndSystemB.right;
 
         // so let's say that System A and System B each have a concept of a
-        // User. In System A, the User is identified with a UserID. In System B,
-        // the user is identified with a PersonNumber.
+        // User. In System A, the User is identified with a PersonNumber. In
+        // System B,
+        // the user is identified with a UserID.
         //
         // We can initialize the KeyMapKey with primary keys that relate each of
         // the System A users with System B users.
@@ -226,21 +227,21 @@ public class KeyMapKeyTest {
         // Create some keys for the two systems:
         // User Joe:
         // System A calls Joe "JosephSmith"
-        // System B calls Joe "JSmith"
+        // System B calls Joe "99445"
         String userId1 = "JosephSmith";
-        String personNumber1 = "JSmith";
+        Long personNumber1 = 99445L;
 
         // User Sally:
-        // System A calls Sally "X135";
-        // System B calls Sally "99443B";
+        // System A calls Sally "X135"
+        // System B calls Sally "99448"
         String userId2 = "X135";
-        String personNumber2 = "99443B";
+        Long personNumber2 = 994438L;
 
         // put Joe and Sally's primary keys into the mapper
         systemBKeyForSystemAKey.put(userId1, personNumber1);
         // note that the line above could be replaced with
         //
-        // systemAKeyForSystemBKey.put(personNumber1, userId1);
+        // systemAKeyForSystemBKey.put(personNumber1, userId1)
         //
         // which would have exactly the same effect on the state of the mapper
 
