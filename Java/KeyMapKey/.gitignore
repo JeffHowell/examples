@@ -4,3 +4,4 @@
 /junitReport/
 /coverageReport/
 /${result.exec.file}
+/.settings/
