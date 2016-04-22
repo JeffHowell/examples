@@ -1,4 +1,4 @@
-package org.summa.stuff;
+package org.jhowell.stuff;
 
 import org.junit.Assert;
 import org.junit.Before;

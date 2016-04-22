@@ -1,4 +1,4 @@
-package org.summa.stuff;
+package org.jhowell.stuff;
 
 import java.util.ArrayList;
 import java.util.List;
