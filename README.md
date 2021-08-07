@@ -14,5 +14,4 @@
 ### Contribution guidelines ###
 
 * Writing tests - make sure they pass
-* Code review - assume all Summa is watching
 * If you think there is a different or better approach, add another project! <-- Encouraged!! More examples are better.
